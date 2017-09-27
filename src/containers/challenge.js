@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Row, Col, Image, Button } from 'react-bootstrap';
 
-import { Form, FormControl, FormGroup, formBasicText, HelpBlock, ControlLabel} from 'react-bootstrap'
+import { Form, FormControl, FormGroup, formBasicText, HelpBlock, ControlLabel, InputGroup, Glyphicon} from 'react-bootstrap'
 
 import { Link } from 'react-router-dom';
 
@@ -10,7 +10,14 @@ import { Link } from 'react-router-dom';
 class ChallengeForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {value: ''};
+    if (props.value) {
+        this.state = {value: props.value};
+
+    }
+    else {
+        this.state = {value: ''};
+    }
+
     this.handleChange = this.handleChange.bind(this)
   }
 
@@ -27,7 +34,7 @@ class ChallengeForm extends React.Component {
 
   render() {
     return (
-      <Form inline>
+      <Form horizontal>
         <FormGroup
           controlId="challengeFormID"
           validationState={this.getValidationState()}
@@ -36,15 +43,33 @@ class ChallengeForm extends React.Component {
           <FormControl
             type="text"
             value={this.state.value}
-            placeholder="some challenge"
+            placeholder="go for a midnight swim"
             onChange={this.handleChange}
           />
-           <Button type="submit">
-            Submit
-            </Button>
           <FormControl.Feedback />
-
         </FormGroup>
+    <FormGroup
+                      controlId="challengeFormID"
+          validationState={this.getValidationState()}
+        >
+    <ControlLabel>I Dare you to </ControlLabel>
+      <InputGroup>
+            <FormControl
+                type="text"
+                value={this.state.value}
+                placeholder="Number of players"
+                onChange={this.handleChange}
+            />
+            <InputGroup.Addon>
+                <Glyphicon glyph="user" />
+            </InputGroup.Addon>
+
+        </InputGroup>
+    
+        </FormGroup>
+         <Button type="submit">
+            Submit
+         </Button>
       </Form>
     );
   }
