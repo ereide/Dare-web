@@ -5,14 +5,13 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import { Nav, Navbar, NavItem, Grid, Col, Row } from 'react-bootstrap';
 
-
 import AsyncLoadable from './components/asyncloading.js';
 
 import Main from './containers/main';
 
-import AsyncChallenge from './containers/challenge'
-import AsyncIdeas from './containers/ideas'
-import AsyncAbout from './containers/about'
+import AsyncChallenge from './containers/challenge';
+import AsyncIdeas from './containers/ideas';
+import AsyncAbout from './containers/about';
 /*
 const AsyncChallenge = AsyncLoadable({
   loader: () => import('./containers/challenge')
@@ -89,14 +88,14 @@ class App extends Component {
         <div className="App">
           <Header />
           <Grid>
-              {routediv}
+            {routediv}
           </Grid>
           <Footer />
         </div>
       </Router>
     );
   }
-/*
+  /*
   componentDidMount() {
     AsyncIdeas.preload();
     AsyncChallenge.preload();

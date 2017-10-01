@@ -2,3 +2,30 @@ hr {
   margin: 25pt;
   size: 1pt;
 }
+
+.Form {
+    width: auto;
+} 
+
+.vote_button {
+  width: 30%;
+  height: 3em;
+}
+
+.positive {
+  background-color: lightgreen;
+  color: lightgreen;
+}
+.negative {
+  background-color: red;
+}
+
+.btn-positive {
+    background-color: rgb(10%, 67%, 10%);
+    color: black;
+}
+
+.btn-negative {
+    background-color: rgb(255, 10, 10);
+    color: black;
+}
